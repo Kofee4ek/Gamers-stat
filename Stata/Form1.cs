@@ -13,10 +13,11 @@ namespace Stata
         {
             InitializeComponent();
         }
-
-        void nikolaefff()
+        string nikolaefff_link = "http://wotskill.ru/players/analysis_wn8/ru-5807219";
+        string ctakah_link = "http://wotskill.ru/players/analysis_wn8/ru-7923121";
+        string check_stat(string link, string number)
         {
-            var request = WebRequest.Create("http://wotskill.ru/players/analysis_wn8/ru-5807219");
+            var request = WebRequest.Create(link);
             using (var responses = request.GetResponse())
             {
                 using (var streams = responses.GetResponseStream())
@@ -25,47 +26,28 @@ namespace Stata
                     //в переменной html наш сайт
                     string html = readers.ReadToEnd();
                     //ищем определенное место
-                    var UpdExp = new Regex(@"<td class=""Aggregated2Value AggregatedValue4"">(?<upd>\d.*)</td>");
+                    var UpdExp = new Regex($@"<td class=""Aggregated2Value AggregatedValue{number}"">(?<upd>\d.*)</td>");
+                    var UpdEx = new Regex(@"<td class=""Aggregated2Value AggregatedValue0"">(?<upd>\d.*)</td>");
                     //в переменной upDate наша искомая дата обновления
-                    string upDate = UpdExp.Match(html).Groups["upd"].Value; // дата
-                    label2.Text = upDate; //выводим значение на форму
-                }
-            }
+                    string wn8 = UpdExp.Match(html).Groups["upd"].Value; // дата
+                    string count_boi = UpdEx.Match(html).Groups["upd"].Value;
+                    label2.Text = wn8;
+                    label4.Text = count_boi;
+                    return null;
 
-        }
-
-        void ctakah()
-        {
-            var request = WebRequest.Create("http://wotskill.ru/players/analysis_wn8/ru-7923121");
-            using (var responses = request.GetResponse())
-            {
-                using (var streams = responses.GetResponseStream())
-                using (var readers = new StreamReader(streams))
-                {
-                    //в переменной html наш сайт
-                    string html = readers.ReadToEnd();
-                    //ищем определенное место
-                    var UpdExp = new Regex(@"<td class=""Aggregated2Value AggregatedValue3"">(?<upd>\d.*)</td>");
-                    //в переменной upDate наша искомая дата обновления
-                    string upDate = UpdExp.Match(html).Groups["upd"].Value; // дата
-                    label4.Text = upDate; //выводим значение на форму
                 }
             }
         }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            nikolaefff();
-            ctakah();
-        }
+        
+
+        
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Width = 440;
-            label5.Text = label2.Text;
-            label6.Text = label4.Text;
-            label7.Text = "Было...";
-            nikolaefff();
-            ctakah();
+
+            check_stat(nikolaefff_link, "4");
+            check_stat(ctakah_link, "3");
         }
     }
 }
