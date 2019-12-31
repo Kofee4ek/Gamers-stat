@@ -15,7 +15,7 @@ namespace Stata
         }
         string nikolaefff_link = "http://wotskill.ru/players/analysis_wn8/ru-5807219";
         string ctakah_link = "http://wotskill.ru/players/analysis_wn8/ru-7923121";
-        string check_stat(string link, string number)
+        async string check_stat(string link, string number)
         {
             var request = WebRequest.Create(link);
             using (var responses = request.GetResponse())
@@ -31,8 +31,9 @@ namespace Stata
                     //в переменной upDate наша искомая дата обновления
                     string wn8 = UpdExp.Match(html).Groups["upd"].Value; // дата
                     string count_boi = UpdEx.Match(html).Groups["upd"].Value;
-                    label2.Text = wn8;
-                    label4.Text = count_boi;
+                    
+
+
                     return null;
 
                 }
@@ -49,5 +50,7 @@ namespace Stata
             check_stat(nikolaefff_link, "4");
             check_stat(ctakah_link, "3");
         }
+
+        
     }
 }
