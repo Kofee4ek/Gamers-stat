@@ -60,13 +60,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(71, 58);
+            this.label2.Location = new System.Drawing.Point(18, 66);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 33);
+            this.label2.Size = new System.Drawing.Size(0, 18);
             this.label2.TabIndex = 1;
-            this.label2.Text = "----------";
             // 
             // label3
             // 
@@ -81,13 +80,12 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Font = new System.Drawing.Font("Arial", 12F);
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(71, 156);
+            this.label4.Location = new System.Drawing.Point(18, 170);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 33);
+            this.label4.Size = new System.Drawing.Size(0, 18);
             this.label4.TabIndex = 3;
-            this.label4.Text = "----------";
             // 
             // button1
             // 
