@@ -40,6 +40,7 @@
             this.data = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.wn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.count = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.historyDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.historyDataSet = new Stata.historyDataSet();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -140,6 +141,14 @@
             this.count.ReadOnly = true;
             this.count.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(77, 197);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(75, 23);
+            this.progressBar1.TabIndex = 6;
+            this.progressBar1.Visible = false;
+            // 
             // historyDataSetBindingSource
             // 
             this.historyDataSetBindingSource.DataSource = this.historyDataSet;
@@ -155,6 +164,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(643, 261);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
@@ -187,6 +197,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn count;
         private System.Windows.Forms.BindingSource historyDataSetBindingSource;
         private historyDataSet historyDataSet;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
 
