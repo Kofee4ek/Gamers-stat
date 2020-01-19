@@ -17,7 +17,7 @@ namespace Stata
 
         string nikolaefff_link = "https://kttc.ru/wot/ru/user/nikolaefff/";
         string ctakah_link = "https://kttc.ru/wot/ru/user/ctakah_kofee4ku/";
-        string sql_connect = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\developer\VisualStudio\Gamers-stat\Stata\history.mdf;Integrated Security=True;Connect Timeout=30";
+        string sql_connect = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\history.mdf;Integrated Security=True;Connect Timeout=30";
 
         SqlCommand command;
         SqlDataAdapter adapt;
@@ -78,10 +78,7 @@ namespace Stata
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "historyDataSet.Table". При необходимости она может быть перемещена или удалена.
-            //this.tableTableAdapter.Fill(this.historyDataSet.Table);
             Load_data();
-
         }
 
         void Load_data()
