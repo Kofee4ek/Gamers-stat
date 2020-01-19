@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.IO;
 using System.Net;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Stata
 {
-     public partial class Form1 : Form
+    public partial class Form1 : Form
     {
         public Form1()
         {
@@ -35,7 +33,7 @@ namespace Stata
             string wn = System.Text.RegularExpressions.Regex.Match(responce, @"""WN8"":([0-9]+\.[0-9]+)").Groups[1].Value;
             if (link == nikolaefff_link)
             {
-            
+
                 label2.Text = "WN8 " + wn + " / " + boi + " боев";
                 progressBar1.Value = 50;
                 return wn + " " + boi;
@@ -43,7 +41,7 @@ namespace Stata
             }
             else
             {
-            
+
                 label4.Text = "WN8 " + wn + " / " + boi + " боев";
                 progressBar1.Value = 100;
                 return wn + " " + boi;
